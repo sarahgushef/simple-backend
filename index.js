@@ -11,7 +11,9 @@ app.use(express.json()); // For getting data from frontend
 app.use(cors()); // For CORS Policy
 
 // Routes
-app.get("/", res.send("Hello World"));
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
 app.use(UserRoute);
 
 // Connection to database and activate the server
